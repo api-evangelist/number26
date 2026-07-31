@@ -1,7 +1,17 @@
 aid: number26
 name: Number26
-description: Number26 is a company surfaced as a portfolio company of battery-ventures and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Number26 — trading as N26 (legally N26 GmbH) — is a German licensed digital
+  bank offering 100% mobile banking to more than 8 million customers across 24
+  European markets. Founded in Berlin in 2013 and holding a full banking licence
+  from Germany's Federal Financial Supervisory Authority (BaFin), N26 provides
+  current accounts with virtual and physical Mastercard debit cards, instant
+  savings with variable interest, in-app stock/ETF and cryptocurrency investing,
+  real-time spending insights, sub-accounts (Spaces), and travel features such as
+  foreign-exchange and insurance, across a free tier and paid Smart, Go, and Metal
+  plans plus matching business accounts. N26 is a consumer neobank and does not
+  publish a public developer API, developer portal, or API documentation; this
+  API Evangelist profile tracks the company's public web presence.
 url: https://raw.githubusercontent.com/api-evangelist/number26/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +19,94 @@ x-backed-by:
 - battery-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/number26.png
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Fintech
+- Banking
+- Neobank
+- Mobile Banking
+- Payments
+- Europe
+- Germany
+apis:
+- aid: number26:number26-default-api
+  name: Number26 default API
+  description: The default API from Number26 — 9 operation(s) for default.
+  humanURL: https://github.com/n26/psd2-tpp-docs
+  baseURL: https://xs2a.tech26.de/v1/berlin-group/v1
+  tags:
+  - default
+  properties:
+  - type: OpenAPI
+    url: openapi/number26-default-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/n26/psd2-tpp-docs
+  - type: APIReference
+    url: https://github.com/n26/psd2-tpp-docs
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/number26-domain-security.yml
+- type: Website
+  url: https://n26.com/en-eu
+- type: Blog
+  url: https://n26.com/en-eu/blog
+- type: Support
+  url: https://support.n26.com/en-eu
+- type: PrivacyPolicy
+  url: https://docs.n26.com/legal/06+EU/03+Privacy%20Policy/en/01privacy-policy-en.pdf
+- type: TermsOfService
+  url: https://n26.com/en-eu/legal-documents
+- type: GitHubOrganization
+  url: https://github.com/n26
+- type: Documentation
+  url: https://github.com/n26/psd2-tpp-docs
+- type: APIReference
+  url: https://github.com/n26/psd2-tpp-docs
+- type: Postman
+  url: https://github.com/n26/psd2-tpp-docs/tree/master/doc/assets/postman
+- type: Authentication
+  url: authentication/number26-xs2a-authentication.yml
+- type: Conventions
+  url: conventions/number26-conventions.yml
+- type: ErrorCatalog
+  url: errors/number26-problem-types.yml
+- type: DataModel
+  url: data-model/number26-data-model.yml
+- type: Conformance
+  url: conformance/number26-conformance.yml
+- type: Lifecycle
+  url: lifecycle/number26-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/number26-lifecycle.yml
+- type: MCPServer
+  url: mcp/number26-mcp.yml
+- type: Overlay
+  url: overlays/number26-xs2a-overlay.yaml
+- type: LLMsTxt
+  url: llms/number26-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1

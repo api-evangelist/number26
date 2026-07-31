@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/number26-xs2a-openapi-original.yml
+note: >-
+  No official N26 MCP server was found. This is a candidate tool list derived
+  from the XS2A OpenAPI operations. The live API requires an eIDAS QWAC
+  certificate and PSD2 licensing, so any real MCP server would be TPP-operated.
+server:
+  name: number26-xs2a
+  transport: http
+tools:
+  - name: create_consent
+    description: Create an account-information consent (POST /consents).
+    source_operation: openapi/number26-xs2a-openapi-original.yml#POST-/consents
+  - name: get_consent_status
+    description: Poll the status of a consent.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#GET-/consents/{consent_id}/status
+  - name: get_consent
+    description: Retrieve a consent resource.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#GET-/consents/{consent_id}
+  - name: delete_consent
+    description: Revoke a consent.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#DELETE-/consents/{consent_id}
+  - name: list_accounts
+    description: List accounts and Spaces the consent grants access to.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#GET-/accounts
+  - name: get_account
+    description: Get a single account by Berlin Group account id.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#GET-/accounts/{bg_account_id}
+  - name: get_account_balances
+    description: Get balances for an account or Space.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#GET-/accounts/{bg_account_id}/balances
+  - name: list_transactions
+    description: List booked/pending transactions filtered by bookingStatus and date range.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#GET-/accounts/{bg_account_id}/transactions
+  - name: get_transaction
+    description: Get a single transaction by id.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#GET-/accounts/{bg_account_id}/transactions/{transaction_id}

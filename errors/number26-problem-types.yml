@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/number26-xs2a-openapi-original.yml
+format: berlin-group
+envelope:
+  fields: [title, code, detail]
+  description: >-
+    Errors are returned as a JSON object with a human-readable `title`, a
+    machine-readable `code`, and a `detail` string, following the Berlin Group
+    NextGenPSD2 error model (not RFC 9457 problem+json).
+problems:
+  - status: 400
+    code: FORMAT_ERROR
+    title: Incorrectly formatted request or wrong parameters
+    remediation: Validate request body and query parameters (e.g. bookingStatus) against the Berlin Group schema.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#POST-/consents
+  - status: 404
+    code: RESOURCE_UNKNOWN
+    title: Account or transaction unknown / no access
+    remediation: Confirm the resource id and that the approved consent grants access to it.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#GET-/accounts/{bg_account_id}/transactions
+  - status: 429
+    code: ACCESS_EXCEEDED
+    title: Request limit breached
+    remediation: >-
+      The four-per-day unattended access limit (or attended limits) has been
+      reached; back off and retry within the allowed window.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#GET-/accounts
+  - status: 500
+    code: GENERIC_ERROR
+    title: Internal error retrieving the requested resource
+    remediation: Retry later; if it persists, verify the eIDAS certificate and contact N26 TPP support.
+    source_operation: openapi/number26-xs2a-openapi-original.yml#GET-/accounts

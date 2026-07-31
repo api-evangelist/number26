@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/n26/psd2-tpp-docs
+versioning:
+  scheme: uri-path
+  current: v1
+  standard: Berlin Group NextGenPSD2 1.3.6
+  docs: https://github.com/n26/psd2-tpp-docs
+interfaces:
+  - name: PSD2 Dedicated Interface
+    status: active
+    description: Primary Berlin Group-compliant production interface.
+  - name: PSD2 Fallback Interface
+    status: deprecated
+    description: Legacy fallback interface; documents deprecated endpoints.
+  - name: PSD2 Sandbox Interface
+    status: active
+    description: Testing environment for TPP onboarding.
+deprecation:
+  notes: >-
+    The PSD2 Fallback Interface is documented as legacy/deprecated; TPPs should
+    integrate against the dedicated interface.

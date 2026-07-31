@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/number26-xs2a-openapi-original.yml
+entities:
+  - name: Consent
+    id_field: consentId
+    description: PSU authorization granting a TPP access to account information; created via POST /consents.
+    fields: [consentId, consentStatus, access, recurringIndicator, validUntil, frequencyPerDay, lastActionDate]
+  - name: Account
+    id_field: resourceId
+    description: A N26 account or Space, identified by a Berlin Group resourceId and (for main accounts) an IBAN.
+    fields: [resourceId, iban, currency, product, name, bic, cashAccountType, status, usage]
+  - name: Balance
+    description: Balance snapshot for an account/Space.
+    fields: [balanceType, balanceAmount, lastChangeDateTime, referenceDate]
+  - name: Transaction
+    id_field: transactionId
+    description: A booked or pending transaction on an account.
+    fields: [transactionId, creditorName, debtorName, transactionAmount, bookingDate, valueDate, currencyExchange, bankTransactionCode, remittanceInformationUnstructuredArray]
+relationships:
+  - from: Consent
+    to: Account
+    type: has_many
+    via: access.accounts (iban)
+  - from: Account
+    to: Balance
+    type: has_many
+    via: _links.balances
+  - from: Account
+    to: Transaction
+    type: has_many
+    via: _links.transactions
+  - from: Transaction
+    to: Account
+    type: belongs_to
+    via: bg_account_id

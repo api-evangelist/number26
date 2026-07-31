@@ -1,0 +1,17 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for N26 XS2A (Berlin Group PSD2)
+  version: 1.0.0
+extends: openapi/number26-xs2a-openapi-original.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-standard: Berlin Group NextGenPSD2 1.3.6
+      x-apievangelist-domain: open-banking
+      x-apievangelist-auth: eIDAS QWAC + OAuth2 bearer + Consent-ID header
+      x-apievangelist-description: >-
+        N26 (Number26 GmbH) XS2A Access-to-Account interface for licensed PSD2
+        third-party providers (AISP/PISP/CBPII).
+  - target: $.servers[0]
+    update:
+      description: N26 production XS2A dedicated interface (Berlin Group).

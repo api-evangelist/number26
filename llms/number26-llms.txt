@@ -1,0 +1,23 @@
+# Number26 (N26)
+
+> Number26 — trading as N26 (N26 GmbH) — is a German licensed digital bank (BaFin) serving 8M+ customers across 24 European markets. Its only public API surface is the XS2A "Access to Account" interface it is required to expose under EU PSD2, implemented to the Berlin Group NextGenPSD2 1.3.6 standard for licensed third-party providers (AISP/PISP/CBPII). There is no general-purpose public developer API.
+
+## APIs
+- [N26 XS2A (Berlin Group PSD2) OpenAPI](https://raw.githubusercontent.com/api-evangelist/number26/refs/heads/main/openapi/number26-xs2a-openapi-original.yml): Consent, account, balance, and transaction endpoints for licensed TPPs. Base URL https://xs2a.tech26.de/v1/berlin-group/v1
+
+## Docs
+- [N26 Open Banking / PSD2 TPP documentation](https://github.com/n26/psd2-tpp-docs): Dedicated, fallback, and sandbox interface docs; eIDAS QWAC certificate requirements; Postman collection.
+
+## Artifacts
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/number26/refs/heads/main/authentication/number26-xs2a-authentication.yml)
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/number26/refs/heads/main/conventions/number26-conventions.yml)
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/number26/refs/heads/main/errors/number26-problem-types.yml)
+- [Data model](https://raw.githubusercontent.com/api-evangelist/number26/refs/heads/main/data-model/number26-data-model.yml)
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/number26/refs/heads/main/conformance/number26-conformance.yml)
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/number26/refs/heads/main/lifecycle/number26-lifecycle.yml)
+
+## Company
+- [Website](https://n26.com/en-eu)
+- [Blog](https://n26.com/en-eu/blog)
+- [Support](https://support.n26.com/en-eu)
+- [GitHub](https://github.com/n26)

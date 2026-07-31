@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: searched
+source: openapi/number26-xs2a-openapi-original.yml
+docs: https://github.com/n26/psd2-tpp-docs
+summary:
+  types: [http, mutualTLS]
+  http_schemes: [bearer]
+  notes: >-
+    N26's XS2A (Access to Account) interface follows the Berlin Group NextGenPSD2
+    1.3.6 standard under EU PSD2. Third-party providers (AISP/PISP/CBPII) must
+    present a valid eIDAS QWAC certificate (role-specific for AIS vs PIS) at the
+    TLS layer (mutual TLS), then obtain an OAuth2 bearer access token via the
+    dedicated interface's authorization step before calling the account/consent
+    endpoints. Account-data calls additionally carry a Consent-ID header bound to
+    a previously approved consent.
+schemes:
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    sources: [openapi/number26-xs2a-openapi-original.yml]
+  - name: eidas-qwac
+    type: mutualTLS
+    description: >-
+      eIDAS QWAC (Qualified Website Authentication Certificate) required at the
+      transport layer; role-specific certificates for AIS and PIS, with concurrent
+      certificate support for automatic renewal.
+    sources: [https://github.com/n26/psd2-tpp-docs]
+consent_binding:
+  header: Consent-ID
+  description: >-
+    Account information endpoints require a Consent-ID header referencing a
+    consent resource created via POST /consents and approved by the PSU.

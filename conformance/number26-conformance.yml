@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/n26/psd2-tpp-docs
+standards:
+  - id: psd2
+    conforms: true
+    evidence: XS2A dedicated interface for AISP/PISP/CBPII under EU PSD2 (SCA/RTS).
+  - id: berlin-group-nextgenpsd2-1.3.6
+    conforms: true
+    evidence: Server and docs declare Berlin Group NextGenPSD2 1.3.6; path /v1/berlin-group/v1.
+  - id: eidas-qwac
+    conforms: true
+    evidence: Role-specific eIDAS QWAC certificates required for API access.
+  - id: oauth2
+    conforms: true
+    evidence: OAuth2 bearer access token used for the dedicated interface.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use the Berlin Group {title,code,detail} envelope, not application/problem+json.

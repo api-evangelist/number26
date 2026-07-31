@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/number26-xs2a-openapi-original.yml
+standard: Berlin Group NextGenPSD2 XS2A 1.3.6
+authentication:
+  style: OAuth2 bearer token over eIDAS QWAC mutual TLS
+  consent_header: Consent-ID
+  detail: authentication/number26-xs2a-authentication.yml
+consent_model:
+  description: >-
+    Account access is consent-gated. A TPP creates a consent (POST /consents),
+    polls its status (GET /consents/{consent_id}/status), then passes the
+    Consent-ID header on account/balance/transaction reads. Consents carry
+    recurringIndicator, validUntil, and frequencyPerDay.
+pagination:
+  style: none-documented
+  notes: Transaction reads are filtered by bookingStatus, dateFrom, and dateTo query parameters rather than paged.
+idempotency:
+  supported: false
+  notes: The published XS2A spec does not document an idempotency-key header.
+error_envelope:
+  fields: [title, code, detail]
+  detail: errors/number26-problem-types.yml
+rate_limiting:
+  signal: HTTP 429 with code ACCESS_EXCEEDED
+  notes: >-
+    Berlin Group / PSD2 access limits apply (unattended access is limited per
+    day per consent); breaching returns 429 "Request limit breached".
+versioning:
+  scheme: uri-path
+  current: v1
+  path: /v1/berlin-group/v1
