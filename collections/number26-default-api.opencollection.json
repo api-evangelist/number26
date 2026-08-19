@@ -1,0 +1,284 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "XS2A_N26 default API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "default",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "1.1 POST /consents (Bank-Offered consent)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://xs2a.tech26.de/v1/berlin-group/v1/consents",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "1.1 POST /consents (Bank-Offered consent)"
+        },
+        {
+          "info": {
+            "name": "2.1 GET /consents/status (polling)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://xs2a.tech26.de/v1/berlin-group/v1/consents/:consent_id/status",
+            "params": [
+              {
+                "name": "consent_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "2.1 GET /consents/status (polling)"
+        },
+        {
+          "info": {
+            "name": "2.2 GET /consents/",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://xs2a.tech26.de/v1/berlin-group/v1/consents/:consent_id",
+            "params": [
+              {
+                "name": "consent_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "2.2 GET /consents/"
+        },
+        {
+          "info": {
+            "name": "2.3 DELETE /consents/",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://xs2a.tech26.de/v1/berlin-group/v1/consents/:consent_id",
+            "params": [
+              {
+                "name": "consent_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "2.3 DELETE /consents/"
+        },
+        {
+          "info": {
+            "name": "3. GET /accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://xs2a.tech26.de/v1/berlin-group/v1/accounts",
+            "headers": [
+              {
+                "name": "Consent-ID",
+                "value": "{{consent_id}}"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "3. GET /accounts"
+        },
+        {
+          "info": {
+            "name": "3.1 GET /accounts by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://xs2a.tech26.de/v1/berlin-group/v1/accounts/:bg_account_id",
+            "headers": [
+              {
+                "name": "Consent-ID",
+                "value": "{{consent_id}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "bg_account_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "3.1 GET /accounts by ID"
+        },
+        {
+          "info": {
+            "name": "4. GET /balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://xs2a.tech26.de/v1/berlin-group/v1/accounts/:bg_account_id/balances",
+            "headers": [
+              {
+                "name": "Consent-ID",
+                "value": "{{consent_id}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "bg_account_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "4. GET /balances"
+        },
+        {
+          "info": {
+            "name": "4.1 GET /balances for a space",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://xs2a.tech26.de/v1/berlin-group/v1/accounts/:space_bg_account_id/balances",
+            "headers": [
+              {
+                "name": "Consent-ID",
+                "value": "{{consent_id}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "space_bg_account_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "4.1 GET /balances for a space"
+        },
+        {
+          "info": {
+            "name": "5. GET /transactions (standing orders)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://xs2a.tech26.de/v1/berlin-group/v1/accounts/:bg_account_id/transactions",
+            "headers": [
+              {
+                "name": "Consent-ID",
+                "value": "{{consent_id}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingStatus",
+                "value": "information",
+                "type": "query"
+              },
+              {
+                "name": "dateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateTo",
+                "value": "information",
+                "type": "query"
+              },
+              {
+                "name": "bg_account_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "5. GET /transactions (standing orders)"
+        },
+        {
+          "info": {
+            "name": "6. GET /transactions by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://xs2a.tech26.de/v1/berlin-group/v1/accounts/:bg_account_id/transactions/:transaction_id",
+            "headers": [
+              {
+                "name": "Consent-ID",
+                "value": "{{consent_id}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "bg_account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "transaction_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "6. GET /transactions by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

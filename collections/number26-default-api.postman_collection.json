@@ -1,0 +1,2202 @@
+{
+  "item": [
+    {
+      "id": "4f64f3b3-6ef9-4f21-8606-a8ce20d342fd",
+      "name": "default",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3811fab8-abd1-4bec-8a8a-f58a613bee64",
+          "name": "1.1 POST /consents (Bank-Offered consent)",
+          "request": {
+            "name": "1.1 POST /consents (Bank-Offered consent)",
+            "description": {},
+            "url": {
+              "path": [
+                "consents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b1378bf9-d96b-499c-8385-614347bbb5a3",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"access\": {\n    \"accounts\": [\n      {\n        \"iban\": \"MC4626956939912m8R99LWS9749\"\n      }\n    ],\n    \"transactions\": [\n      {\n        \"iban\": \"MC4626956939912m8R99LWS9749\"\n      }\n    ],\n    \"balances\": [\n      {\n        \"iban\": \"MC4626956939912m8R99LWS9749\"\n      }\n    ],\n    \"additionalInformation\": {\n      \"ownerName\": [\n        {\n          \"iban\": \"MC4626956939912m8R99LWS9749\"\n        }\n      ]\n    },\n    \"allPsd2\": \"ALL_ACCOUNTS_WITH_OWNER_NAME\"\n  },\n  \"recurringIndicator\": true,\n  \"validUntil\": {\n    \"year\": 2021,\n    \"month\": \"DECEMBER\",\n    \"chronology\": {\n      \"calendarType\": \"iso8601\"\n    },\n    \"leapYear\": false,\n    \"dayOfWeek\": \"MONDAY\",\n    \"dayOfYear\": 361,\n    \"era\": \"CE\",\n    \"monthValue\": 12,\n    \"dayOfMonth\": 27\n  },\n  \"frequencyPerDay\": 9\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"consentStatus\": \"RECEIVED\",\n  \"consentId\": {\n    \"value\": \"9b8d2906-0a80-4c52-876c-61d04ce8dbe4\"\n  },\n  \"links\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f84e2fb-33fd-49d9-8f38-9813cb647eab",
+              "name": "Incorrectly formatted consent or wrong parameters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"access\": {\n    \"accounts\": [\n      {\n        \"iban\": \"MC4626956939912m8R99LWS9749\"\n      }\n    ],\n    \"transactions\": [\n      {\n        \"iban\": \"MC4626956939912m8R99LWS9749\"\n      }\n    ],\n    \"balances\": [\n      {\n        \"iban\": \"MC4626956939912m8R99LWS9749\"\n      }\n    ],\n    \"additionalInformation\": {\n      \"ownerName\": [\n        {\n          \"iban\": \"MC4626956939912m8R99LWS9749\"\n        }\n      ]\n    },\n    \"allPsd2\": \"ALL_ACCOUNTS_WITH_OWNER_NAME\"\n  },\n  \"recurringIndicator\": true,\n  \"validUntil\": {\n    \"year\": 2021,\n    \"month\": \"DECEMBER\",\n    \"chronology\": {\n      \"calendarType\": \"iso8601\"\n    },\n    \"leapYear\": false,\n    \"dayOfWeek\": \"MONDAY\",\n    \"dayOfYear\": 361,\n    \"era\": \"CE\",\n    \"monthValue\": 12,\n    \"dayOfMonth\": 27\n  },\n  \"frequencyPerDay\": 9\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "babcf5f6-7ba0-4fa5-b031-dfa0dac0ee66",
+              "name": "Account not found on our systems or invalid certificate",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "consents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"access\": {\n    \"accounts\": [\n      {\n        \"iban\": \"MC4626956939912m8R99LWS9749\"\n      }\n    ],\n    \"transactions\": [\n      {\n        \"iban\": \"MC4626956939912m8R99LWS9749\"\n      }\n    ],\n    \"balances\": [\n      {\n        \"iban\": \"MC4626956939912m8R99LWS9749\"\n      }\n    ],\n    \"additionalInformation\": {\n      \"ownerName\": [\n        {\n          \"iban\": \"MC4626956939912m8R99LWS9749\"\n        }\n      ]\n    },\n    \"allPsd2\": \"ALL_ACCOUNTS_WITH_OWNER_NAME\"\n  },\n  \"recurringIndicator\": true,\n  \"validUntil\": {\n    \"year\": 2021,\n    \"month\": \"DECEMBER\",\n    \"chronology\": {\n      \"calendarType\": \"iso8601\"\n    },\n    \"leapYear\": false,\n    \"dayOfWeek\": \"MONDAY\",\n    \"dayOfYear\": 361,\n    \"era\": \"CE\",\n    \"monthValue\": 12,\n    \"dayOfMonth\": 27\n  },\n  \"frequencyPerDay\": 9\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "147b49cd-5a98-4e82-af77-1beea8b0b826",
+          "name": "2.1 GET /consents/status (polling)",
+          "request": {
+            "name": "2.1 GET /consents/status (polling)",
+            "description": {},
+            "url": {
+              "path": [
+                "consents",
+                ":consent_id",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "consent_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fd5d31b5-9d5e-49b5-a43e-1c9eba01e68a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "consents",
+                    ":consent_id",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "consent_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"consentStatus\": \"received\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1180b5c-7a13-4e37-9b2f-61357b55e350",
+          "name": "2.2 GET /consents/",
+          "request": {
+            "name": "2.2 GET /consents/",
+            "description": {},
+            "url": {
+              "path": [
+                "consents",
+                ":consent_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "consent_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "50b40cd5-457d-40a3-b1cd-a1c719207b5a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "consents",
+                    ":consent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "consent_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access\": {\n    \"accounts\": [\n      {\n        \"iban\": \"ST66797089939462764637664\"\n      }\n    ],\n    \"transactions\": [\n      {\n        \"iban\": \"ST66797089939462764637664\"\n      }\n    ],\n    \"balances\": [\n      {\n        \"iban\": \"ST66797089939462764637664\"\n      }\n    ],\n    \"additionalInformation\": {\n      \"ownerName\": [\n        {\n          \"iban\": \"ST66797089939462764637664\"\n        }\n      ]\n    },\n    \"allPsd2\": \"ALL_ACCOUNTS_WITH_OWNER_NAME\"\n  },\n  \"recurringIndicator\": true,\n  \"validUntil\": {\n    \"year\": 2021,\n    \"month\": \"AUGUST\",\n    \"monthValue\": 8,\n    \"dayOfMonth\": 2,\n    \"leapYear\": false,\n    \"dayOfWeek\": \"MONDAY\",\n    \"dayOfYear\": 214,\n    \"era\": \"CE\",\n    \"chronology\": {\n      \"calendarType\": \"iso8601\",\n      \"id\": \"ISO\"\n    }\n  },\n  \"frequencyPerDay\": 9,\n  \"lastActionDate\": {\n    \"year\": 2021,\n    \"month\": \"JUNE\",\n    \"monthValue\": 6,\n    \"dayOfMonth\": 30,\n    \"leapYear\": false,\n    \"dayOfWeek\": \"WEDNESDAY\",\n    \"dayOfYear\": 181,\n    \"era\": \"CE\",\n    \"chronology\": {\n      \"calendarType\": \"iso8601\",\n      \"id\": \"ISO\"\n    }\n  },\n  \"consentStatus\": \"VALID\",\n  \"links\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4f897619-ee49-4190-a799-0d52b2470eb6",
+          "name": "2.3 DELETE /consents/",
+          "request": {
+            "name": "2.3 DELETE /consents/",
+            "description": {},
+            "url": {
+              "path": [
+                "consents",
+                ":consent_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "consent_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b3e2133c-683b-4bd3-a529-d3d116bb82ca",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "consents",
+                    ":consent_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "consent_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a7620c2-b6ea-4d94-833f-cd38a91f241b",
+          "name": "3. GET /accounts",
+          "request": {
+            "name": "3. GET /accounts",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Consent-ID",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "04d138c8-f865-45cf-be2f-77fae5ef6c14",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accounts\": [\n    {\n      \"resourceId\": \"00e446bb-9c90-4811-a48f-a288f14d74bf\",\n      \"iban\": \"DEq2Y5AM1lstJtfGgK7Iccrs9pFuNl25sL\",\n      \"currency\": \"EUR\",\n      \"product\": \"Main Account\",\n      \"name\": \"wMOvmbvffu\",\n      \"bic\": \"NTSBDEB1XXX\",\n      \"cashAccountType\": \"CACC\",\n      \"status\": \"enabled\",\n      \"usage\": \"PRIV\",\n      \"_links\": {\n        \"balances\": {\n          \"href\": \"/v1/berlin-group/v1/accounts/00e446bb-9c90-4811-a48f-a288f14d74bf/balances\"\n        },\n        \"transactions\": {\n          \"href\": \"/v1/berlin-group/v1/accounts/00e446bb-9c90-4811-a48f-a288f14d74bf/transactions\"\n        }\n      }\n    },\n    {\n      \"resourceId\": \"f642c68f-5812-4242-b5b9-0fd64eb302df\",\n      \"currency\": \"EUR\",\n      \"product\": \"Space\",\n      \"name\": \"ZPiPMliqFK\",\n      \"cashAccountType\": \"CACC\",\n      \"status\": \"enabled\",\n      \"usage\": \"PRIV\",\n      \"_links\": {\n        \"balances\": {\n          \"href\": \"/v1/berlin-group/v1/accounts/f642c68f-5812-4242-b5b9-0fd64eb302df/balances\"\n        },\n        \"transactions\": {\n          \"href\": \"/v1/berlin-group/v1/accounts/f642c68f-5812-4242-b5b9-0fd64eb302df/transactions\"\n        }\n      }\n    },\n    {\n      \"resourceId\": \"8565f643-412a-43b2-ab1b-aefd29c03507\",\n      \"currency\": \"EUR\",\n      \"product\": \"Space\",\n      \"cashAccountType\": \"CACC\",\n      \"status\": \"deleted\",\n      \"usage\": \"PRIV\",\n      \"_links\": {\n        \"balances\": {\n          \"href\": \"/v1/berlin-group/v1/accounts/8565f643-412a-43b2-ab1b-aefd29c03507/balances\"\n        },\n        \"transactions\": {\n          \"href\": \"/v1/berlin-group/v1/accounts/8565f643-412a-43b2-ab1b-aefd29c03507/transactions\"\n        }\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4d525a75-ea51-4df8-a46b-fc997c7f7f5c",
+              "name": "Rate limit error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"Request limit breached\",\n  \"code\": \"ACCESS_EXCEEDED\",\n  \"detail\": \"Request limit has been breached! Request blocked.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bc7d4593-84ac-4948-a204-c458f4ce8298",
+              "name": "Error getting accounts from database",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"Could not retrieve accounts\",\n  \"code\": \"GENERIC_ERROR\",\n  \"detail\": \"\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5c0ba2bd-16bc-4058-a80c-91e92a9b36e9",
+          "name": "3.1 GET /accounts by ID",
+          "request": {
+            "name": "3.1 GET /accounts by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":bg_account_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "bg_account_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Consent-ID",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3d5a5d93-c93f-419d-9513-7405109493dc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account\": {\n    \"resourceId\": \"35453846-38d5-4417-8e0c-eab21dee93a7\",\n    \"iban\": \"DE00000000001234000000\",\n    \"currency\": \"EUR\",\n    \"product\": \"Main Account\",\n    \"name\": \"Primary Space\",\n    \"bic\": \"NTSBDEB1XXX\",\n    \"cashAccountType\": \"CACC\",\n    \"status\": \"enabled\",\n    \"usage\": \"PRIV\",\n    \"_links\": {\n      \"balances\": {\n        \"href\": \"/v1/berlin-group/v1/accounts/35453846-38d5-4417-8e0c-eab21dee93a7/balances\"\n      },\n      \"transactions\": {\n        \"href\": \"/v1/berlin-group/v1/accounts/35453846-38d5-4417-8e0c-eab21dee93a7/transactions\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8695f91e-78e6-4f03-9a5f-d4609a8945b9",
+              "name": "Account does not exist or user does not have access to it",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9345ffc4-5c97-405f-8617-636472de6fc9",
+              "name": "Rate limit error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"Request limit breached\",\n  \"code\": \"ACCESS_EXCEEDED\",\n  \"detail\": \"Request limit has been breached! Request blocked.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f3312be5-3719-4e6f-ac79-f44cc35acd54",
+              "name": "Failed to get account details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"GENERIC_ERROR\",\n  \"code\": \"GENERIC_ERROR\",\n  \"detail\": \"\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d5a51c21-43bf-4f41-bbbb-4318ffb5794b",
+          "name": "4. GET /balances",
+          "request": {
+            "name": "4. GET /balances",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":bg_account_id",
+                "balances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "bg_account_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Consent-ID",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "475e4a06-59eb-4bfe-8617-05821ded589a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id",
+                    "balances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"balances\": [\n    {\n      \"balanceType\": \"expected\",\n      \"balanceAmount\": {\n        \"amount\": \"2000\",\n        \"currency\": \"EUR\"\n      },\n      \"lastChangeDateTime\": \"1970-01-01T00:00:01Z\",\n      \"referenceDate\": \"1970-01-01\"\n    }\n  ],\n  \"account\": {\n    \"iban\": \"DE00000000001234000000\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a97192fb-1c3a-4e38-9437-c513d8e013aa",
+              "name": "Account does not exist or user has not access to account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id",
+                    "balances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a157fc61-87f4-46c7-92b9-e2a731f09218",
+              "name": "Rate limit error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id",
+                    "balances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"Request limit breached\",\n  \"code\": \"ACCESS_EXCEEDED\",\n  \"detail\": \"Request limit has been breached! Request blocked.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d745269e-dee0-439d-bae6-c2ec6a0a1d61",
+              "name": "Error getting account balances",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id",
+                    "balances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"GENERIC_ERROR\",\n  \"code\": \"GENERIC_ERROR\",\n  \"detail\": \"\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "152138f8-8603-4497-8b95-feb320330b72",
+          "name": "4.1 GET /balances for a space",
+          "request": {
+            "name": "4.1 GET /balances for a space",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":space_bg_account_id",
+                "balances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "space_bg_account_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Consent-ID",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2c940580-1d1a-4ba3-9a42-3c5e36a6d736",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":space_bg_account_id",
+                    "balances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "space_bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"balances\": [\n    {\n      \"balanceType\": \"expected\",\n      \"balanceAmount\": {\n        \"amount\": \"2000\",\n        \"currency\": \"EUR\"\n      },\n      \"lastChangeDateTime\": \"1970-01-01T00:00:01Z\",\n      \"referenceDate\": \"1970-01-01\"\n    }\n  ],\n  \"account\": {\n    \"iban\": \"DE00000000001234000000\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc654118-db7d-499b-8cac-f6869261c937",
+              "name": "Account does not exist or user has not access to account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":space_bg_account_id",
+                    "balances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "space_bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "05f32965-9c7e-4c01-80af-6c19515b0758",
+              "name": "Rate limit error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":space_bg_account_id",
+                    "balances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "space_bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"Request limit breached\",\n  \"code\": \"ACCESS_EXCEEDED\",\n  \"detail\": \"Request limit has been breached! Request blocked.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5d1186de-1ee2-4f5e-b28a-4465f5d96090",
+              "name": "Error getting account balances",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":space_bg_account_id",
+                    "balances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "space_bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"GENERIC_ERROR\",\n  \"code\": \"GENERIC_ERROR\",\n  \"detail\": \"\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8165df37-5c21-4efc-a876-f5e09673dac6",
+          "name": "5. GET /transactions (standing orders)",
+          "request": {
+            "name": "5. GET /transactions (standing orders)",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":bg_account_id",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bookingStatus",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateFrom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateTo",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "bg_account_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Consent-ID",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0bcbd5da-ebd2-49bc-9940-1bec20e88c23",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bookingStatus",
+                      "value": "information"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "information"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account\": {\n    \"iban\": \"DE65100110011234567890\"\n  },\n  \"transactions\": {\n    \"pending\": [],\n    \"booked\": [\n      {\n        \"transactionId\": \"26e6eccd-2753-45b8-abc8-050207849edc\",\n        \"creditorName\": \"partner name\",\n        \"creditorAccount\": {\n          \"iban\": \"DE65100110011234567890\"\n        },\n        \"transactionAmount\": {\n          \"amount\": \"-10.0\",\n          \"currency\": \"EUR\"\n        },\n        \"bookingDate\": \"2021-07-05\",\n        \"valueDate\": \"2021-07-05\",\n        \"remittanceInformationUnstructuredArray\": [\n          \"Debited transaction\"\n        ],\n        \"bankTransactionCode\": \"PMNT-RCDT-ESCT\"\n      },\n      {\n        \"transactionId\": \"e605c895-d1a7-4db7-bda4-dddc429c0ae1\",\n        \"debtorName\": \"merchant name\",\n        \"transactionAmount\": {\n          \"amount\": \"3.0\",\n          \"currency\": \"EUR\"\n        },\n        \"bookingDate\": \"2021-07-05\",\n        \"valueDate\": \"2021-07-05\",\n        \"currencyExchange\": [\n          {\n            \"exchangeRate\": \"0.2\",\n            \"unitCurrency\": \"GBP\",\n            \"sourceCurrency\": \"GBP\",\n            \"targetCurrency\": \"EUR\",\n            \"quotationDate\": \"2021-07-05\"\n          }\n        ],\n        \"remittanceInformationUnstructuredArray\": [\n          \"Credited transaction\"\n        ],\n        \"bankTransactionCode\": \"PMNT-CCRD-CWDL\"\n      }\n    ],\n    \"_links\": {\n      \"account\": {\n        \"href\": \"/v1/berlin-group/v1/accounts/0a3fa412-0e5a-4437-a5ca-12873166c8f0\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "831b2bc8-e2cf-4661-b6a6-3ab9c21d534e",
+              "name": "Invalid search params",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bookingStatus",
+                      "value": "information"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "information"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"Invalid booking status\",\n  \"code\": \"FORMAT_ERROR\",\n  \"detail\": \"bookingStatus=invalidStatus\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5d3aef06-dbfd-4a34-9fc7-864b92a2be2c",
+              "name": "User has not access to its account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bookingStatus",
+                      "value": "information"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "information"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"Account unknown\",\n  \"code\": \"RESOURCE_UNKNOWN\",\n  \"detail\": \"Account unknown\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "30624e1f-5947-435a-9b97-745c31ed8ffa",
+              "name": "Rate limit error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bookingStatus",
+                      "value": "information"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "information"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"Request limit breached\",\n  \"code\": \"ACCESS_EXCEEDED\",\n  \"detail\": \"Request limit has been breached! Request blocked.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0da9f65d-ff41-48e0-83cb-ed157781735d",
+          "name": "6. GET /transactions by ID",
+          "request": {
+            "name": "6. GET /transactions by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":bg_account_id",
+                "transactions",
+                ":transaction_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "bg_account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transaction_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Consent-ID",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2544f7e8-0333-4424-8965-9c22838b712d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id",
+                    "transactions",
+                    ":transaction_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transactionDetails\": {\n    \"transactionId\": \"4289174b-b6c4-4470-b6e8-e5bf5e043723\",\n    \"creditorName\": \"merchant name\",\n    \"transactionAmount\": {\n      \"amount\": \"-3.0\",\n      \"currency\": \"EUR\"\n    },\n    \"bookingDate\": \"1970-01-01\",\n    \"valueDate\": \"1970-01-01\",\n    \"remittanceInformationUnstructuredArray\": [\n      \"reference text\"\n    ],\n    \"bankTransactionCode\": \"PMNT-CCRD-POSD\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff99734f-382e-47fe-abe8-c0a2da364a6d",
+              "name": "User has not access to transaction",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id",
+                    "transactions",
+                    ":transaction_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"Account unknown\",\n  \"code\": \"RESOURCE_UNKNOWN\",\n  \"detail\": \"Account unknown\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "40fd027b-968a-41be-b10d-888cb1318712",
+              "name": "Rate limit error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":bg_account_id",
+                    "transactions",
+                    ":transaction_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bg_account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transaction_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Consent-ID",
+                    "value": "{{consent_id}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"Request limit breached\",\n  \"code\": \"ACCESS_EXCEEDED\",\n  \"detail\": \"Request limit has been breached! Request blocked.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://xs2a.tech26.de/v1/berlin-group/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "762f54ee-4c63-4406-8eba-d5d84784983f",
+    "name": "XS2A_N26 default API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
