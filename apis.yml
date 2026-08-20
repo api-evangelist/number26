@@ -50,7 +50,8 @@ apis:
   description: The default API from Number26 — 9 operation(s) for default.
   humanURL: https://github.com/n26/psd2-tpp-docs
   baseURL: https://xs2a.tech26.de/v1/berlin-group/v1
-  tags:
+  tags: []
+  tags_raw:
   - default
   properties:
   - type: OpenAPI
