@@ -1,18 +1,18 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: XS2A_N26 default API
+  title: XS2A_N26 Default API
   version: 1.0.0
   contact: {}
 servers:
 - url: https://xs2a.tech26.de/v1/berlin-group/v1
 security: []
 tags:
-- name: default
+- name: Default
 paths:
   /consents:
     post:
       tags:
-      - default
+      - Default
       summary: 1.1 POST /consents (Bank-Offered consent)
       requestBody:
         content:
@@ -61,10 +61,12 @@ paths:
           description: Incorrectly formatted consent or wrong parameters
         '500':
           description: Account not found on our systems or invalid certificate
+      operationId: postConsents
+      x-operation-id-source: derived
   /consents/{consent_id}/status:
     get:
       tags:
-      - default
+      - Default
       summary: 2.1 GET /consents/status (polling)
       security:
       - bearerAuth: []
@@ -81,10 +83,12 @@ paths:
             application/json:
               example:
                 consentStatus: received
+      operationId: getConsentsByConsentIdStatus
+      x-operation-id-source: derived
   /consents/{consent_id}:
     get:
       tags:
-      - default
+      - Default
       summary: 2.2 GET /consents/
       security:
       - bearerAuth: []
@@ -139,9 +143,11 @@ paths:
                     id: ISO
                 consentStatus: VALID
                 links: {}
+      operationId: getConsentsByConsentId
+      x-operation-id-source: derived
     delete:
       tags:
-      - default
+      - Default
       summary: 2.3 DELETE /consents/
       security:
       - bearerAuth: []
@@ -154,10 +160,12 @@ paths:
       responses:
         '204':
           description: Successful response
+      operationId: deleteConsentsByConsentId
+      x-operation-id-source: derived
   /accounts:
     get:
       tags:
-      - default
+      - Default
       summary: 3. GET /accounts
       security:
       - bearerAuth: []
@@ -227,10 +235,12 @@ paths:
                 title: Could not retrieve accounts
                 code: GENERIC_ERROR
                 detail: ''
+      operationId: getAccounts
+      x-operation-id-source: derived
   /accounts/{bg_account_id}:
     get:
       tags:
-      - default
+      - Default
       summary: 3.1 GET /accounts by ID
       security:
       - bearerAuth: []
@@ -284,10 +294,12 @@ paths:
                 title: GENERIC_ERROR
                 code: GENERIC_ERROR
                 detail: ''
+      operationId: getAccountsByBgAccountId
+      x-operation-id-source: derived
   /accounts/{bg_account_id}/balances:
     get:
       tags:
-      - default
+      - Default
       summary: 4. GET /balances
       security:
       - bearerAuth: []
@@ -335,10 +347,12 @@ paths:
                 title: GENERIC_ERROR
                 code: GENERIC_ERROR
                 detail: ''
+      operationId: getAccountsByBgAccountIdBalances
+      x-operation-id-source: derived
   /accounts/{space_bg_account_id}/balances:
     get:
       tags:
-      - default
+      - Default
       summary: 4.1 GET /balances for a space
       security:
       - bearerAuth: []
@@ -386,10 +400,12 @@ paths:
                 title: GENERIC_ERROR
                 code: GENERIC_ERROR
                 detail: ''
+      operationId: getAccountsBySpaceBgAccountIdBalances
+      x-operation-id-source: derived
   /accounts/{bg_account_id}/transactions:
     get:
       tags:
-      - default
+      - Default
       summary: 5. GET /transactions (standing orders)
       security:
       - bearerAuth: []
@@ -484,10 +500,12 @@ paths:
                 title: Request limit breached
                 code: ACCESS_EXCEEDED
                 detail: Request limit has been breached! Request blocked.
+      operationId: getAccountsByBgAccountIdTransactions
+      x-operation-id-source: derived
   /accounts/{bg_account_id}/transactions/{transaction_id}:
     get:
       tags:
-      - default
+      - Default
       summary: 6. GET /transactions by ID
       security:
       - bearerAuth: []
@@ -540,6 +558,8 @@ paths:
                 title: Request limit breached
                 code: ACCESS_EXCEEDED
                 detail: Request limit has been breached! Request blocked.
+      operationId: getAccountsByBgAccountIdTransactionsByTransactionId
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:
