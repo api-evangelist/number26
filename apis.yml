@@ -59,7 +59,7 @@ tags:
 - Germany
 apis:
 - aid: number26:number26-default-api
-  name: Number26 default API
+  name: Number26 Default API
   description: The default API from Number26 — 9 operation(s) for default.
   humanURL: https://github.com/n26/psd2-tpp-docs
   baseURL: https://xs2a.tech26.de/v1/berlin-group/v1
